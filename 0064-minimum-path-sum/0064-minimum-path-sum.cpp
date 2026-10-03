@@ -25,8 +25,8 @@ public:
                 else{
                     int up = INT_MAX;
                     int left = INT_MAX;
-                    if(i>0)  up = grid[i][j] + f(i-1,j,grid,dp);
-                    if(j>0)  left = grid[i][j] + f(i,j-1,grid,dp);
+                    if(i>0)  up = dp[i-1][j]+grid[i][j] ;
+                    if(j>0)  left = dp[i][j-1]+grid[i][j];
 
                     dp[i][j]=min(up,left);
                 }
